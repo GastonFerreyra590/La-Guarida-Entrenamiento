@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+/*----RESET-----*/
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+
+
+
+
+body {
+    font-family: 'Permanent Marker', cursive;
+}
+
+
+/*!--------------------------HEADER--------------------------*/
+
+
+
+
+
+.juju{
+    text-align: center;
+}
+
+.jujuju{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+}
+
+.juli{
+    text-align: center;
+}
+
+header{
+    background-color: rgba(214, 214, 214, 0.322) ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+}
+
+
+
+
+header nav h1{
+    text-align: center;
+}
+h1{ 
+    color: #217400;
+    
+}
+
+
+
+header h1{
+    font-size: 40px;
+    font-weight: 100;
+}
+
+
+header nav ul{
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
+
+header  img{
+    width: 300px;
+    height:200px;
+}
+
+header nav ul li{
+    font-size: 20px;
+    margin: 90px;
+    
+}
+
+
+.hero p{
+    margin-bottom: 20px;
+}
+
+.hero a{
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    padding: 10px 15px 10px 15px;
+
+}
+
+/*?------------------------MAIN------------------------------*/
+
+.hero{
+    color: aliceblue;
+    text-align: center;
+    font-size: 30px;
+    height: 500px;
+    background-image: url(../img/La\ Guarida.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main section h1{
+    color: aliceblue;
+}
+
+.objetivos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  padding: 50px; /* Para mayor separación interna */
+}
+
+.objetivos img {
+    width: 500px;
+    height: 700px;
+    margin-left: 50px;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
+.motivación {
+    text-align: center;
+    font-size: 20px;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.motivación p {
+  margin-bottom: 30px; /* Aumenta el espacio entre el texto y el botón */
+  line-height: 1.6; /* Mejora legibilidad */
+}
+
+.motivación a {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 15px;
+  margin-top: 30px; /* Mayor separación respecto al texto */
+    display: inline-block;
+}
+
+
+section h2{
+    text-align: center;
+    font-size: 60px;
+    font-weight: 100;
+    margin-top: 60px;
+}
+
+
+
+.reseñas{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.reseñas {
+    padding: 40px;
+    background-color: #f8f8f8;
+}
+
+.reseñas h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.contenedor-reseñas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.tarjeta {
+    background-color: #f0eded;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    max-width: 300px;
+    flex: 1 1 250px;
+}
+
+
+
+.tarjeta p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+}
+
+
+
+.alinear-texto{
+    text-align: center;
+}
+
+
+.valores{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 25px;
+    font-weight: 100px;
+}
+
+.valores ul li{
+    list-style-type: none;
+}
+
+.nosotros{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 200px;
+    margin-top: 50px;
+
+}
+
+.chicos{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+    margin-left: 50px;
+    flex-wrap: wrap;
+}
+
+.chicas{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+    margin-left: 50px;
+    flex-wrap: wrap;
+}
+
+
+.tomas{
+    width: 300px;
+    height: 500px;
+}
+
+.fran{
+    width: 400px;
+    height: 500px;
+}
+
+.vik{
+    width: 300px;
+    height: 400px;
+}
+
+.delfi{
+    width: 300px;
+    height: 400px;
+}
+
+
+.persona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.persona p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+.manada-opina{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.rena-img{
+    width: 300px;
+    height: 500px;
+    flex-wrap: wrap;
+}
+
+.guarida-3{
+    width: 300px;
+    height: 500px;
+    flex-wrap: wrap;
+}
+
+
+
+.servicios {
+    background-color: #ffffff;
+    padding: 3rem 2rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.servicios h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #111;
+    font-weight: bold;
+}
+
+.servicio {
+    margin-bottom: 2.5rem;
+    font-size: 20px;
+}
+
+.servicio h3 {
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.servicio p {
+    font-size: 20px;
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+
+.contacto h3{
+    text-align: center;
+    padding: 40px;
+    font-size: 40px;
+}
+
+.frase{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+
+
+
+
+.Nombre{
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.Apellido{
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.Email{
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+
+.Celular{
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.Materia{
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.Enviar{
+    margin-left: 30px;
+    padding: 10px;
+}
+
+.frase-final{
+    margin-top: 20px;
+}
+
+/**---------------------FOOTER------------------------------*/
+
+
+footer{
+    background-color: rgba(214, 214, 214, 0.322) ;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+footer p a img{
+    width: 50px;
+    height: 50px;
+}
+
+.pie-de-pagina{
+    text-align: right;
+}
+
+.whatsapp{
+    position: fixed;
+    bottom: 50px;
+    right: 25px;
+}
