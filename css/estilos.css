@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+TC&display=swap');
 
 /*----RESET-----*/
 
@@ -12,23 +12,19 @@
 
 
 body {
-    font-family: 'Permanent Marker', cursive;
+    font-family: "WDXL Lubrifont TC", sans-serif;
 }
 
-
+body {
+    background-image: url(../img/Fondo\ guarida.jpg);
+    background-size: cover; /* La imagen cubre toda la pantalla */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-attachment: fixed; /* La imagen se mantiene fija al hacer scroll */
+    min-height: 100vh; /* Asegura que cubra toda la altura de la ventana */
+}
 /*!--------------------------HEADER--------------------------*/
 
-
-
-
-
-.juju{
-    text-align: center;
-}
-
-.jujuju{
-    text-align: center;
-}
 
 h4{
     text-align: center;
@@ -73,7 +69,7 @@ header nav ul{
 header nav ul li a {
     text-decoration: none;
     color: black;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 header  img{
@@ -87,7 +83,9 @@ header nav ul li{
     
 }
 
-
+.hero h1{
+    font-size: 70px;
+}
 .hero p{
     margin-bottom: 20px;
 }
@@ -96,7 +94,7 @@ header nav ul li{
     background-color: rgb(255, 255, 255);
     text-decoration: none;
     color: rgb(0, 0, 0);
-    font-size: 25px;
+    font-size: 35px;
     padding: 10px 15px 10px 15px;
 
 }
@@ -106,7 +104,7 @@ header nav ul li{
 .hero{
     color: aliceblue;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     height: 500px;
     background-image: url(../img/La\ Guarida.jpg);
     background-position: center;
@@ -128,7 +126,7 @@ main section h1{
     display: flex;
     justify-content: space-between;
     align-items: center;
-  padding: 50px; /* Para mayor separación interna */
+    padding: 50px; /* Para mayor separación interna */
 }
 
 .objetivos img {
@@ -141,7 +139,7 @@ main section h1{
 
 .motivación {
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
     max-width: 50%;
     display: flex;
     flex-direction: column;
@@ -158,7 +156,7 @@ main section h1{
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     padding: 10px 15px;
   margin-top: 30px; /* Mayor separación respecto al texto */
     display: inline-block;
@@ -167,7 +165,7 @@ main section h1{
 
 section h2{
     text-align: center;
-    font-size: 60px;
+    font-size: 70px;
     font-weight: 100;
     margin-top: 60px;
 }
@@ -187,7 +185,7 @@ section h2{
 
 .reseñas h2 {
     text-align: center;
-    font-size: 32px;
+    font-size: 50px;
     margin-bottom: 40px;
     color: #333;
 }
@@ -211,7 +209,7 @@ section h2{
 
 
 .tarjeta p {
-    font-size: 16px;
+    font-size: 18px;
     color: #444;
     line-height: 1.5;
 }
@@ -224,19 +222,25 @@ section h2{
 
 
 .valores{
+    background-color: aliceblue;
     text-align: center;
     margin-top: 100px;
     margin-bottom: 100px;
-    font-size: 25px;
-    font-weight: 100px;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 30px;
+    font-weight: 200px;
 }
+
+
+
 
 .valores ul li{
     list-style-type: none;
 }
 
 .nosotros{
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
     margin-bottom: 200px;
     margin-top: 50px;
@@ -261,7 +265,7 @@ section h2{
 
 
 .tomas{
-    width: 300px;
+    width: 400px;
     height: 500px;
 }
 
@@ -292,23 +296,18 @@ section h2{
 .persona p {
     margin-top: 10px;
     text-align: center;
-    font-size: 16px;
+    font-size: 30px;
 }
 
 
 .manada-opina{
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
 
-.rena-img{
-    width: 300px;
-    height: 500px;
-    flex-wrap: wrap;
-}
 
 .guarida-3{
     width: 300px;
@@ -325,11 +324,9 @@ section h2{
     max-width: 900px;
     margin: 0 auto;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .servicios h2 {
-    font-size: 2.5rem;
     margin-bottom: 2rem;
     color: #111;
     font-weight: bold;
@@ -341,7 +338,7 @@ section h2{
 }
 
 .servicio h3 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: #1a1a1a;
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -362,6 +359,8 @@ section h2{
     font-size: 40px;
 }
 
+
+
 .frase{
     text-align: center;
     margin-bottom: 40px;
@@ -372,32 +371,38 @@ section h2{
 
 
 .Nombre{
+    font-size: 25px;
     padding: 30px;
     margin-bottom: 10px;
 }
 
 .Apellido{
+    font-size: 25px;
     padding: 30px;
     margin-bottom: 10px;
 }
 
 .Email{
+    font-size: 25px;
     padding: 30px;
     margin-bottom: 10px;
 }
 
 
 .Celular{
+    font-size: 25px;
     padding: 30px;
     margin-bottom: 10px;
 }
 
 .Materia{
+    font-size: 25px;
     padding: 30px;
     margin-bottom: 10px;
 }
 
 .Enviar{
+    font-size: 25px;
     margin-left: 30px;
     padding: 10px;
 }
@@ -405,6 +410,34 @@ section h2{
 .frase-final{
     margin-top: 20px;
 }
+
+.gym-carousel .carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.gym-carousel {
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.gym-carousel .carousel-item img:hover {
+    transform: scale(1.02);
+}
+
+.parrafo-carrousel{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 30px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
 
 /**---------------------FOOTER------------------------------*/
 
