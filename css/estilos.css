@@ -492,61 +492,185 @@ footer p a img {
 
 
 
-/**responsive**/
+/**------------------------------RESPONSIVE---------------------------**/
 
 
 
 
 
-.objetivos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
+/* =================================
+   ESTILOS BASE
+   ================================= */
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-.objetivos img {
-    width: 400px;
-    height: 600px;
-    margin-left: 50px;
-    display: inline-block;
-    margin-bottom: 50px;
-    object-fit: cover;
-    /* Mantiene proporción de la imagen */
+/* =================================
+   MEDIA QUERIES PARA PANTALLAS GRANDES
+   (min-width: 1200px)
+   ================================= */
+
+@media screen and (min-width: 1200px) {
+    /* Sección Objetivos */
+    .objetivos {
+        padding: 60px 50px;
+        gap: 50px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .objetivos img {
+        width: 400px;
+        height: 550px;
+        margin-left: 40px;
+        margin-bottom: 40px;
+    }
+
+    .motivación {
+        font-size: 32px;
+        max-width: 50%;
+    }
+
+    .motivación a {
+        font-size: 26px;
+        padding: 16px 24px;
+        transition: all 0.3s ease;
+    }
+
+    /* Sección Servicios */
+    .servicios {
+        padding: 4rem 3rem;
+        max-width: 1200px;
+        margin: 2rem auto;
+    }
+
+    .servicios h2 {
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .servicios h3 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .servicio {
+        margin-bottom: 2.5rem;
+        padding: 2.5rem;
+        font-size: 20px;
+    }
+
+    .servicio h4 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .servicio p {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    /* Sección Nosotros */
+    h2 {
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .nosotros {
+        font-size: 38px;
+        margin-bottom: 150px;
+        margin-top: 60px;
+    }
+
+    .chicos,
+    .chicas {
+        justify-content: center;
+        margin-bottom: 100px;
+        margin-left: 50px;
+        margin-right: 50px;
+        gap: 2rem;
+    }
+
+    .tomas,
+    .fran {
+        width: 380px;
+        height: 480px;
+    }
+
+    .vik,
+    .delfi {
+        width: 340px;
+        height: 420px;
+    }
+
+    .persona {
+        margin-right: 30px;
+        margin-bottom: 40px;
+    }
+
+    .persona p {
+        font-size: 28px;
+        margin-top: 20px;
+    }
+
+    .valores {
+        margin: 100px 60px;
+        padding: 3rem 2rem;
+        font-size: 28px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .valores h3 {
+        font-size: 2.2rem;
+    }
+
+    .valores p {
+        font-size: 1.3rem;
+    }
+
+    .valores ul li {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    /* Carrusel */
+    .parrafo-carrousel {
+        font-size: 28px;
+        margin: 40px 200px 0;
+        padding: 2.5rem;
+        line-height: 1.6;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Footer */
+    footer {
+        padding: 2.5rem 2rem;
+        margin-top: 4rem;
+    }
+
+    footer img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .pie-de-pagina {
+        font-size: 1rem;
+    }
 }
 
-.motivación {
-    text-align: center;
-    font-size: 30px;
-    max-width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-}
+/* =================================
+   MEDIA QUERIES PARA TABLETS
+   (768px - 1199px)
+   ================================= */
 
-.motivación p {
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-.motivación a {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-size: 25px;
-    padding: 10px 15px;
-    margin-top: 30px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.motivación a:hover {
-    background-color: rgb(51, 51, 51);
-}
-
-/* Media Queries para Tablets (768px - 1024px) */
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    /* Sección Objetivos */
     .objetivos {
         padding: 40px 30px;
         gap: 30px;
@@ -568,43 +692,8 @@ footer p a img {
         font-size: 22px;
         padding: 12px 18px;
     }
-}
 
-
-/* Media Queries para Móviles (800px) */
-@media screen and (max-width: 800px) {
-    .objetivos {
-        padding: 30px 15px;
-        gap: 30px;
-    }
-
-    .objetivos img {
-        width: 280px;
-        height: 350px;
-        max-width: 90%;
-    }
-
-    .motivación {
-        font-size: 20px;
-    }
-
-    .motivación p {
-        margin-bottom: 20px;
-        padding: 0 10px;
-    }
-
-    .motivación a {
-        font-size: 18px;
-        padding: 12px 24px;
-        margin-top: 20px;
-        border-radius: 5px;
-        /* Añade bordes redondeados para móvil */
-    }
-}
-
-
-/* Media Queries para Tablets (768px - 1024px) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Sección Servicios */
     .servicios {
         padding: 2.5rem 1.5rem;
         max-width: 750px;
@@ -637,83 +726,7 @@ footer p a img {
         line-height: 1.5;
     }
 
-    /* Footer para tablet */
-    footer {
-        padding: 1.8rem 1rem;
-        margin-top: 2.5rem;
-    }
-
-    footer img {
-        width: 28px;
-        height: 28px;
-    }
-
-    .pie-de-pagina {
-        font-size: 0.85rem;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .servicios {
-        padding: 2rem 1rem;
-        max-width: 95%;
-        margin: 0.5rem auto;
-        border-radius: 8px;
-    }
-
-    .servicios h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-    }
-
-    .servicios h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .servicio {
-        margin-bottom: 1.8rem;
-        padding: 1.5rem 1rem;
-        font-size: 16px;
-        border-left-width: 3px;
-    }
-
-    .servicio h4 {
-        font-size: 1.2rem;
-        margin-bottom: 0.8rem;
-        line-height: 1.3;
-    }
-
-    .servicio p {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    /* Footer para móvil */
-    footer {
-        padding: 1.5rem 0.8rem;
-        margin-top: 2rem;
-    }
-
-    footer img {
-        width: 26px;
-        height: 26px;
-    }
-
-    .pie-de-pagina {
-        font-size: 0.8rem;
-        line-height: 1.4;
-        padding: 0 1rem;
-    }
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Sección Nosotros */
     h2 {
         font-size: 2.2rem;
         margin-bottom: 1.5rem;
@@ -774,77 +787,351 @@ img {
         font-size: 1rem;
         padding: 0.8rem;
     }
+
+    /* Carrusel */
+    .parrafo-carrousel {
+        font-size: 24px;
+        margin: 25px 150px 0;
+        padding: 1.8rem;
+        line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.8rem 1rem;
+        margin-top: 2.5rem;
+    }
+
+    footer img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .pie-de-pagina {
+        font-size: 0.85rem;
+    }
 }
 
-@media screen and (max-width: 800px) {
+/* =================================
+   MEDIA QUERIES PARA MÓVILES
+   (481px - 767px)
+   ================================= */
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    /* Sección Objetivos */
+    .objetivos {
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .objetivos img {
+        width: 280px;
+        height: 350px;
+        max-width: 85%;
+        margin-left: 10px;
+    }
+
+    .motivación {
+        font-size: 22px;
+    }
+
+    .motivación p {
+        margin-bottom: 20px;
+        padding: 0 15px;
+    }
+
+    .motivación a {
+        font-size: 19px;
+        padding: 14px 26px;
+        margin-top: 20px;
+        border-radius: 6px;
+    }
+
+    /* Sección Servicios */
+    .servicios {
+        padding: 2rem 1.2rem;
+        max-width: 90%;
+        margin: 0.8rem auto;
+        border-radius: 8px;
+    }
+
+    .servicios h2 {
+        font-size: 2rem;
+        margin-bottom: 1.6rem;
+        line-height: 1.2;
+    }
+
+    .servicios h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .servicio {
+        margin-bottom: 1.8rem;
+        padding: 1.6rem 1.2rem;
+        font-size: 17px;
+        border-left-width: 3px;
+    }
+
+    .servicio h4 {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .servicio p {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    /* Sección Nosotros */
     h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        padding: 0 1rem;
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+        padding: 0 1.2rem;
     }
     
     .nosotros {
-        font-size: 24px;
-        margin-bottom: 60px;
-        margin-top: 30px;
-        padding: 0 1rem;
+        font-size: 26px;
+        margin-bottom: 70px;
+        margin-top: 35px;
+        padding: 0 1.2rem;
     }
     
-    .chicos, .chicas {
+    .chicos, 
+    .chicas {
         flex-direction: column;
         align-items: center;
-        margin-bottom: 50px;
+        margin-bottom: 60px;
         margin-left: 0;
         margin-right: 0;
-        gap: 2rem;
+        gap: 1.8rem;
     }
     
-    .tomas, .fran {
-        width: 280px;
-        height: 350px;
+    .tomas, 
+    .fran {
+        width: 300px;
+        height: 370px;
     }
     
-    .vik, .delfi {
-        width: 250px;
-        height: 300px;
+    .vik, 
+    .delfi {
+        width: 270px;
+        height: 320px;
     }
     
     .persona {
         margin-right: 0;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         width: 100%;
-        max-width: 300px;
+        max-width: 320px;
     }
     
     .persona p {
-        font-size: 18px;
+        font-size: 20px;
         margin-top: 15px;
-        padding: 0 1rem;
+        padding: 0 1.2rem;
     }
     
     .valores {
-        margin: 50px 20px;
-        padding: 2rem 1rem;
-        font-size: 18px;
+        margin: 60px 25px;
+        padding: 2.2rem 1.2rem;
+        font-size: 20px;
     }
     
     .valores h2 {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
     }
     
     .valores h3 {
-        font-size: 1.4rem;
-        margin: 1.5rem 0 0.8rem 0;
+        font-size: 1.5rem;
+        margin: 1.5rem 0 1rem 0;
     }
     
     .valores p {
-        font-size: 1rem;
+        font-size: 1.1rem;
         line-height: 1.5;
         margin-bottom: 1.5rem;
     }
     
+    .valores ul li {
+        font-size: 1rem;
+        padding: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Carrusel */
+    .parrafo-carrousel {
+        font-size: 20px;
+        margin: 25px;
+        padding: 1.6rem;
+        line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.6rem 1rem;
+        margin-top: 2.2rem;
+    }
+
+    footer img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .pie-de-pagina {
+        font-size: 0.82rem;
+        line-height: 1.4;
+        padding: 0 1.2rem;
+    }
+}
+
+/* =================================
+   MEDIA QUERIES PARA MÓVILES PEQUEÑOS
+   (max-width: 480px)
+   ================================= */
+
+@media screen and (max-width: 480px) {
+    /* Sección Objetivos */
+    .objetivos {
+        padding: 25px 15px;
+        gap: 20px;
+    }
+
+    .objetivos img {
+        width: 250px;
+        height: 320px;
+        max-width: 95%;
+        margin-left: 5px;
+    }
+
+    .motivación {
+        font-size: 18px;
+    }
+
+    .motivación p {
+        margin-bottom: 18px;
+        padding: 0 8px;
+    }
+
+    .motivación a {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-top: 18px;
+        border-radius: 4px;
+    }
+
+    /* Sección Servicios */
+    .servicios {
+        padding: 1.5rem 0.8rem;
+        max-width: 98%;
+        margin: 0.5rem auto;
+        border-radius: 6px;
+    }
+
+    .servicios h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.1;
+        padding: 0 0.5rem;
+    }
+
+    .servicios h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+        padding: 0 0.5rem;
+    }
+
+    .servicio {
+        margin-bottom: 1.5rem;
+        padding: 1.2rem 0.8rem;
+        font-size: 15px;
+        border-left-width: 2px;
+    }
+
+    .servicio h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+        line-height: 1.2;
+    }
+
+    .servicio p {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    /* Sección Nosotros */
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+        padding: 0 0.8rem;
+    }
+    
+    .nosotros {
+        font-size: 20px;
+        margin-bottom: 40px;
+        margin-top: 25px;
+        padding: 0 0.8rem;
+    }
+    
+    .chicos, 
+    .chicas {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        margin-left: 0;
+        margin-right: 0;
+        gap: 1.5rem;
+    }
+    
+    .tomas, 
+    .fran {
+        width: 240px;
+        height: 300px;
+    }
+    
+    .vik, 
+    .delfi {
+        width: 220px;
+        height: 270px;
+    }
+    
+    .persona {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 260px;
+    }
+    
+    .persona p {
+        font-size: 16px;
+        margin-top: 12px;
+        padding: 0 0.8rem;
+    }
+    
+    .valores {
+        margin: 40px 15px;
+        padding: 1.5rem 0.8rem;
+        font-size: 16px;
+    }
+    
+    .valores h2 {
+        font-size: 1.4rem;
+    }
+    
+    .valores h3 {
+        font-size: 1.2rem;
+        margin: 1.2rem 0 0.8rem 0;
+    }
+    
+    .valores p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 1.2rem;
+    }
+    
     .valores p br {
-        display: none; /* Eliminar saltos de línea en móvil */
+        display: none; /* Eliminar saltos de línea en móvil pequeño */
     }
     
     .valores ul {
@@ -853,32 +1140,33 @@ img {
     }
     
     .valores ul li {
-        font-size: 0.9rem;
-        padding: 0.8rem;
-        margin-bottom: 0.8rem;
+        font-size: 0.8rem;
+        padding: 0.6rem;
+        margin-bottom: 0.6rem;
     }
-}
 
-/* Media Queries para Tablets (768px - 1024px) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Carrusel */
     .parrafo-carrousel {
-        font-size: 24px;
-        margin-top: 25px;
-        margin-left: 150px;
-        margin-right: 150px;
-        padding: 1.8rem;
-        line-height: 1.5;
+        font-size: 16px;
+        margin: 15px;
+        padding: 1.2rem;
+        line-height: 1.4;
     }
-}
 
-/* Media Queries para Móviles (max-width: 800px) */
-@media screen and (max-width: 800px) {
-    .parrafo-carrousel {
-        font-size: 18px;
-        margin-top: 20px;
-        margin-left: 20px;
-        margin-right: 20px;
-        padding: 1.5rem;
-        line-height: 1.5;
+    /* Footer */
+    footer {
+        padding: 1.2rem 0.6rem;
+        margin-top: 1.5rem;
+    }
+
+    footer img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .pie-de-pagina {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        padding: 0 0.8rem;
     }
 }
