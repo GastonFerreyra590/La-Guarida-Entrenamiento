@@ -34,7 +34,7 @@ h4{
     text-align: center;
 }
 
-header{
+/**header{
     background-color: rgba(214, 214, 214, 0.322) ;
     display: flex;
     justify-content: space-between;
@@ -81,6 +81,17 @@ header nav ul li{
     font-size: 20px;
     margin: 90px;
     
+}**/
+
+header nav li{
+    font-size: 20px;
+    margin: 90px;
+}
+
+
+header  img{
+    width: 300px;
+    height:200px;
 }
 
 .hero h1{
@@ -465,4 +476,153 @@ footer p a img{
     position: fixed;
     bottom: 50px;
     right: 25px;
+}
+
+
+
+
+/**responsive**/
+
+
+
+
+
+.objetivos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.objetivos img {
+    width: 500px;
+    height: 700px;
+    margin-left: 50px;
+    display: inline-block;
+    margin-bottom: 50px;
+    object-fit: cover; /* Mantiene proporción de la imagen */
+}
+
+.motivación {
+    text-align: center;
+    font-size: 30px;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.motivación p {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.motivación a {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 25px;
+    padding: 10px 15px;
+    margin-top: 30px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.motivación a:hover {
+    background-color: rgb(51, 51, 51);
+}
+
+/* Media Queries para Tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .objetivos {
+        padding: 40px 30px;
+        gap: 30px;
+    }
+    
+    .objetivos img {
+        width: 400px;
+        height: 550px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .motivación {
+        font-size: 26px;
+        max-width: 55%;
+    }
+    
+    .motivación a {
+        font-size: 22px;
+        padding: 12px 18px;
+    }
+}
+
+/* Media Queries para Tablets pequeñas (768px - 992px) */
+@media screen and (max-width: 992px) {
+    .objetivos {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 40px;
+    }
+    
+    .objetivos img {
+        width: 350px;
+        height: 450px;
+        margin-left: 0;
+        margin-bottom: 0;
+        order: 1; /* La imagen aparece primero */
+    }
+    
+    .motivación {
+        max-width: 100%;
+        font-size: 24px;
+        order: 2; /* El texto aparece después */
+    }
+    
+    .motivación p {
+        margin-bottom: 25px;
+    }
+    
+    .motivación a {
+        font-size: 20px;
+        padding: 12px 20px;
+        margin-top: 25px;
+    }
+    
+    /* Eliminar saltos de línea en tablets */
+    .alinear-texto br {
+        display: none;
+    }
+}
+
+/* Media Queries para Móviles (480px - 768px) */
+@media screen and (max-width: 768px) {
+    .objetivos {
+        padding: 30px 15px;
+        gap: 30px;
+    }
+    
+    .objetivos img {
+        width: 280px;
+        height: 350px;
+        max-width: 90%;
+    }
+    
+    .motivación {
+        font-size: 20px;
+    }
+    
+    .motivación p {
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+    
+    .motivación a {
+        font-size: 18px;
+        padding: 12px 24px;
+        margin-top: 20px;
+        border-radius: 5px; /* Añade bordes redondeados para móvil */
+    }
 }
