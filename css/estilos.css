@@ -2,8 +2,8 @@
 
 /*----RESET-----*/
 
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
 }
 
@@ -17,20 +17,26 @@ body {
 
 body {
     background-image: url(../img/Fondo\ guarida.jpg);
-    background-size: cover; /* La imagen cubre toda la pantalla */
-    background-position: center center; /* Centra la imagen */
-    background-repeat: no-repeat; /* No repite la imagen */
-    background-attachment: fixed; /* La imagen se mantiene fija al hacer scroll */
-    min-height: 100vh; /* Asegura que cubra toda la altura de la ventana */
+    background-size: cover;
+    /* La imagen cubre toda la pantalla */
+    background-position: center center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    /* No repite la imagen */
+    background-attachment: fixed;
+    /* La imagen se mantiene fija al hacer scroll */
+    min-height: 100vh;
+    /* Asegura que cubra toda la altura de la ventana */
 }
+
 /*!--------------------------HEADER--------------------------*/
 
 
-h4{
+h4 {
     text-align: center;
 }
 
-.juli{
+.juli {
     text-align: center;
 }
 
@@ -83,25 +89,26 @@ header nav ul li{
     
 }**/
 
-header nav li{
+header nav li {
     font-size: 20px;
     margin: 90px;
 }
 
 
-header  img{
+header img {
     width: 300px;
-    height:200px;
+    height: 200px;
 }
 
-.hero h1{
+.hero h1 {
     font-size: 70px;
 }
-.hero p{
+
+.hero p {
     margin-bottom: 20px;
 }
 
-.hero a{
+.hero a {
     background-color: rgb(255, 255, 255);
     text-decoration: none;
     color: rgb(0, 0, 0);
@@ -112,7 +119,7 @@ header  img{
 
 /*?------------------------MAIN------------------------------*/
 
-.hero{
+.hero {
     color: aliceblue;
     text-align: center;
     font-size: 40px;
@@ -129,7 +136,7 @@ header  img{
 }
 
 
-main section h1{
+main section h1 {
     color: aliceblue;
 }
 
@@ -137,7 +144,8 @@ main section h1{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px; /* Para mayor separación interna */
+    padding: 50px;
+    /* Para mayor separación interna */
 }
 
 .objetivos img {
@@ -159,8 +167,10 @@ main section h1{
 }
 
 .motivación p {
-  margin-bottom: 30px; /* Aumenta el espacio entre el texto y el botón */
-  line-height: 1.6; /* Mejora legibilidad */
+    margin-bottom: 30px;
+    /* Aumenta el espacio entre el texto y el botón */
+    line-height: 1.6;
+    /* Mejora legibilidad */
 }
 
 .motivación a {
@@ -169,12 +179,13 @@ main section h1{
     text-decoration: none;
     font-size: 25px;
     padding: 10px 15px;
-  margin-top: 30px; /* Mayor separación respecto al texto */
+    margin-top: 30px;
+    /* Mayor separación respecto al texto */
     display: inline-block;
 }
 
 
-section h2{
+section h2 {
     text-align: center;
     font-size: 70px;
     font-weight: 100;
@@ -183,7 +194,7 @@ section h2{
 
 
 
-.reseñas{
+.reseñas {
     text-align: center;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -227,12 +238,12 @@ section h2{
 
 
 
-.alinear-texto{
+.alinear-texto {
     text-align: center;
 }
 
 
-.valores{
+.valores {
     background-color: aliceblue;
     text-align: center;
     margin-top: 100px;
@@ -246,11 +257,11 @@ section h2{
 
 
 
-.valores ul li{
+.valores ul li {
     list-style-type: none;
 }
 
-.nosotros{
+.nosotros {
     font-size: 40px;
     text-align: center;
     margin-bottom: 200px;
@@ -258,7 +269,7 @@ section h2{
 
 }
 
-.chicos{
+.chicos {
     display: flex;
     justify-content: space-around;
     margin-bottom: 100px;
@@ -266,7 +277,7 @@ section h2{
     flex-wrap: wrap;
 }
 
-.chicas{
+.chicas {
     display: flex;
     justify-content: space-around;
     margin-bottom: 100px;
@@ -275,22 +286,22 @@ section h2{
 }
 
 
-.tomas{
+.tomas {
     width: 400px;
     height: 500px;
 }
 
-.fran{
+.fran {
     width: 400px;
     height: 500px;
 }
 
-.vik{
+.vik {
     width: 300px;
     height: 400px;
 }
 
-.delfi{
+.delfi {
     width: 300px;
     height: 400px;
 }
@@ -311,7 +322,7 @@ section h2{
 }
 
 
-.manada-opina{
+.manada-opina {
     text-align: center;
     font-size: 40px;
     margin-top: 50px;
@@ -320,7 +331,7 @@ section h2{
 
 
 
-.guarida-3{
+.guarida-3 {
     width: 300px;
     height: 500px;
     flex-wrap: wrap;
@@ -364,7 +375,7 @@ section h2{
 
 
 
-.contacto h3{
+.contacto h3 {
     text-align: center;
     padding: 40px;
     font-size: 40px;
@@ -372,7 +383,7 @@ section h2{
 
 
 
-.frase{
+.frase {
     text-align: center;
     margin-bottom: 40px;
     font-size: 30px;
@@ -381,44 +392,44 @@ section h2{
 
 
 
-.Nombre{
+.Nombre {
     font-size: 25px;
     padding: 30px;
     margin-bottom: 10px;
 }
 
-.Apellido{
+.Apellido {
     font-size: 25px;
     padding: 30px;
     margin-bottom: 10px;
 }
 
-.Email{
+.Email {
     font-size: 25px;
     padding: 30px;
     margin-bottom: 10px;
 }
 
 
-.Celular{
+.Celular {
     font-size: 25px;
     padding: 30px;
     margin-bottom: 10px;
 }
 
-.Materia{
+.Materia {
     font-size: 25px;
     padding: 30px;
     margin-bottom: 10px;
 }
 
-.Enviar{
+.Enviar {
     font-size: 25px;
     margin-left: 30px;
     padding: 10px;
 }
 
-.frase-final{
+.frase-final {
     margin-top: 20px;
 }
 
@@ -441,7 +452,7 @@ section h2{
     transform: scale(1.02);
 }
 
-.parrafo-carrousel{
+.parrafo-carrousel {
     margin-top: 30px;
     text-align: center;
     font-size: 30px;
@@ -453,8 +464,8 @@ section h2{
 /**---------------------FOOTER------------------------------*/
 
 
-footer{
-    background-color: rgba(214, 214, 214, 0.322) ;
+footer {
+    background-color: rgba(214, 214, 214, 0.322);
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -463,16 +474,16 @@ footer{
 }
 
 
-footer p a img{
+footer p a img {
     width: 50px;
     height: 50px;
 }
 
-.pie-de-pagina{
+.pie-de-pagina {
     text-align: right;
 }
 
-.whatsapp{
+.whatsapp {
     position: fixed;
     bottom: 50px;
     right: 25px;
@@ -500,7 +511,8 @@ footer p a img{
     margin-left: 50px;
     display: inline-block;
     margin-bottom: 50px;
-    object-fit: cover; /* Mantiene proporción de la imagen */
+    object-fit: cover;
+    /* Mantiene proporción de la imagen */
 }
 
 .motivación {
@@ -539,90 +551,334 @@ footer p a img{
         padding: 40px 30px;
         gap: 30px;
     }
-    
+
     .objetivos img {
         width: 400px;
         height: 550px;
         margin-left: 20px;
         margin-bottom: 30px;
     }
-    
+
     .motivación {
         font-size: 26px;
         max-width: 55%;
     }
-    
+
     .motivación a {
         font-size: 22px;
         padding: 12px 18px;
     }
 }
 
-/* Media Queries para Tablets pequeñas (768px - 992px) */
-@media screen and (max-width: 992px) {
-    .objetivos {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-        gap: 40px;
-    }
-    
-    .objetivos img {
-        width: 350px;
-        height: 450px;
-        margin-left: 0;
-        margin-bottom: 0;
-        order: 1; /* La imagen aparece primero */
-    }
-    
-    .motivación {
-        max-width: 100%;
-        font-size: 24px;
-        order: 2; /* El texto aparece después */
-    }
-    
-    .motivación p {
-        margin-bottom: 25px;
-    }
-    
-    .motivación a {
-        font-size: 20px;
-        padding: 12px 20px;
-        margin-top: 25px;
-    }
-    
-    /* Eliminar saltos de línea en tablets */
-    .alinear-texto br {
-        display: none;
-    }
-}
 
-/* Media Queries para Móviles (480px - 768px) */
-@media screen and (max-width: 768px) {
+/* Media Queries para Móviles (800px) */
+@media screen and (max-width: 800px) {
     .objetivos {
         padding: 30px 15px;
         gap: 30px;
     }
-    
+
     .objetivos img {
         width: 280px;
         height: 350px;
         max-width: 90%;
     }
-    
+
     .motivación {
         font-size: 20px;
     }
-    
+
     .motivación p {
         margin-bottom: 20px;
         padding: 0 10px;
     }
-    
+
     .motivación a {
         font-size: 18px;
         padding: 12px 24px;
         margin-top: 20px;
-        border-radius: 5px; /* Añade bordes redondeados para móvil */
+        border-radius: 5px;
+        /* Añade bordes redondeados para móvil */
+    }
+}
+
+
+/* Media Queries para Tablets (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .servicios {
+        padding: 2.5rem 1.5rem;
+        max-width: 750px;
+        margin: 1rem auto;
+    }
+
+    .servicios h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .servicios h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .servicio {
+        margin-bottom: 2rem;
+        padding: 1.8rem;
+        font-size: 18px;
+    }
+
+    .servicio h4 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .servicio p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    /* Footer para tablet */
+    footer {
+        padding: 1.8rem 1rem;
+        margin-top: 2.5rem;
+    }
+
+    footer img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .pie-de-pagina {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .servicios {
+        padding: 2rem 1rem;
+        max-width: 95%;
+        margin: 0.5rem auto;
+        border-radius: 8px;
+    }
+
+    .servicios h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .servicios h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .servicio {
+        margin-bottom: 1.8rem;
+        padding: 1.5rem 1rem;
+        font-size: 16px;
+        border-left-width: 3px;
+    }
+
+    .servicio h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .servicio p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Footer para móvil */
+    footer {
+        padding: 1.5rem 0.8rem;
+        margin-top: 2rem;
+    }
+
+    footer img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .pie-de-pagina {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        padding: 0 1rem;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .nosotros {
+        font-size: 32px;
+        margin-bottom: 120px;
+        margin-top: 40px;
+    }
+
+    .chicos,
+    .chicas {
+        justify-content: center;
+        margin-bottom: 80px;
+        margin-left: 30px;
+        margin-right: 30px;
+        gap: 1.5rem;
+    }
+
+    .tomas,
+    .fran {
+        width: 320px;
+        height: 400px;
+    }
+
+    .vik,
+    .delfi {
+        width: 280px;
+        height: 350px;
+    }
+
+    .persona {
+        margin-right: 20px;
+        margin-bottom: 30px;
+    }
+
+    .persona p {
+        font-size: 24px;
+        margin-top: 15px;
+    }
+
+    .valores {
+        margin: 80px 40px;
+        padding: 2.5rem 1.5rem;
+        font-size: 24px;
+    }
+
+    .valores h3 {
+        font-size: 1.8rem;
+    }
+
+    .valores p {
+        font-size: 1.1rem;
+    }
+
+    .valores ul li {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .nosotros {
+        font-size: 24px;
+        margin-bottom: 60px;
+        margin-top: 30px;
+        padding: 0 1rem;
+    }
+    
+    .chicos, .chicas {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+        margin-left: 0;
+        margin-right: 0;
+        gap: 2rem;
+    }
+    
+    .tomas, .fran {
+        width: 280px;
+        height: 350px;
+    }
+    
+    .vik, .delfi {
+        width: 250px;
+        height: 300px;
+    }
+    
+    .persona {
+        margin-right: 0;
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .persona p {
+        font-size: 18px;
+        margin-top: 15px;
+        padding: 0 1rem;
+    }
+    
+    .valores {
+        margin: 50px 20px;
+        padding: 2rem 1rem;
+        font-size: 18px;
+    }
+    
+    .valores h2 {
+        font-size: 1.6rem;
+    }
+    
+    .valores h3 {
+        font-size: 1.4rem;
+        margin: 1.5rem 0 0.8rem 0;
+    }
+    
+    .valores p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+    
+    .valores p br {
+        display: none; /* Eliminar saltos de línea en móvil */
+    }
+    
+    .valores ul {
+        text-align: left;
+        padding: 0;
+    }
+    
+    .valores ul li {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+}
+
+/* Media Queries para Tablets (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .parrafo-carrousel {
+        font-size: 24px;
+        margin-top: 25px;
+        margin-left: 150px;
+        margin-right: 150px;
+        padding: 1.8rem;
+        line-height: 1.5;
+    }
+}
+
+/* Media Queries para Móviles (max-width: 800px) */
+@media screen and (max-width: 800px) {
+    .parrafo-carrousel {
+        font-size: 18px;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 1.5rem;
+        line-height: 1.5;
     }
 }
