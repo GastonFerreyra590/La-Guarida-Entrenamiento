@@ -1,0 +1,1918 @@
+// =================================
+// LA GUARIDA - SASS COMPLETO
+// =================================
+
+// =================================
+// 1. IMPORTS DE FUENTES
+// =================================
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+// =================================
+// 2. VARIABLES SASS
+// =================================
+
+// Colores principales
+$color-primary: hsl(113, 86%, 25%);
+$color-primary-light: #3ce775;
+$color-primary-dark: #065a0a;
+$color-text: #1a1a1a;
+$color-text-light: #666;
+$color-background: #f8f9fa;
+$color-white: #ffffff;
+$color-border: #e9ecef;
+$color-hero-text: aliceblue;
+
+// Paleta de colores extendida
+$colors: (
+    primary: $color-primary,
+    primary-light: $color-primary-light,
+    primary-dark: $color-primary-dark,
+    text: $color-text,
+    text-light: $color-text-light,
+    background: $color-background,
+    white: $color-white,
+    border: $color-border,
+    hero-text: $color-hero-text
+);
+
+// Fuentes
+$font-primary: "Poppins", "Roboto", sans-serif;
+
+// Espaciados responsive
+$spacing-xs: clamp(0.5rem, 1vw, 0.75rem);
+$spacing-sm: clamp(1rem, 2vw, 1.5rem);
+$spacing-md: clamp(1.5rem, 3vw, 2rem);
+$spacing-lg: clamp(2rem, 4vw, 3rem);
+$spacing-xl: clamp(3rem, 5vw, 4rem);
+$spacing-xxl: clamp(4rem, 6vw, 6rem);
+
+// Mapa de espaciados
+$spacings: (
+    xs: $spacing-xs,
+    sm: $spacing-sm,
+    md: $spacing-md,
+    lg: $spacing-lg,
+    xl: $spacing-xl,
+    xxl: $spacing-xxl
+);
+
+// Tamaños de fuente responsive
+$font-xs: clamp(0.8rem, 1.5vw, 0.9rem);
+$font-sm: clamp(0.9rem, 2vw, 1rem);
+$font-base: clamp(1rem, 2.5vw, 1.1rem);
+$font-lg: clamp(1.1rem, 3vw, 1.25rem);
+$font-xl: clamp(1.25rem, 3.5vw, 1.5rem);
+$font-2xl: clamp(1.5rem, 4vw, 2rem);
+$font-3xl: clamp(2rem, 5vw, 2.5rem);
+$font-4xl: clamp(2.5rem, 6vw, 3.5rem);
+$font-5xl: clamp(3rem, 7vw, 4.5rem);
+
+// Mapa de fuentes
+$font-sizes: (
+    xs: $font-xs,
+    sm: $font-sm,
+    base: $font-base,
+    lg: $font-lg,
+    xl: $font-xl,
+    2xl: $font-2xl,
+    3xl: $font-3xl,
+    4xl: $font-4xl,
+    5xl: $font-5xl
+);
+
+// Sombras
+$shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
+
+// Mapa de sombras
+$shadows: (
+    sm: $shadow-sm,
+    md: $shadow-md,
+    lg: $shadow-lg,
+    xl: $shadow-xl
+);
+
+// Transiciones
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Mapa de transiciones
+$transitions: (
+    fast: $transition-fast,
+    normal: $transition-normal,
+    slow: $transition-slow
+);
+
+// Breakpoints
+$breakpoints: (
+    xs: 480px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+// Z-index
+$z-indexes: (
+    dropdown: 1000,
+    sticky: 1020,
+    fixed: 1030,
+    modal-backdrop: 1040,
+    modal: 1050,
+    popover: 1060,
+    tooltip: 1070
+);
+
+// =================================
+// 3. FUNCIONES SASS
+// =================================
+
+// Función para obtener colores del mapa
+@function color($key) {
+    @if map-has-key($colors, $key) {
+        @return map-get($colors, $key);
+    }
+
+    @warn "Color '#{$key}' no encontrado en el mapa de colores.";
+    @return null;
+}
+
+// Función para obtener espaciados del mapa
+@function spacing($key) {
+    @if map-has-key($spacings, $key) {
+        @return map-get($spacings, $key);
+    }
+
+    @warn "Espaciado '#{$key}' no encontrado en el mapa de espaciados.";
+    @return null;
+}
+
+// Función para obtener tamaños de fuente del mapa
+@function font-size($key) {
+    @if map-has-key($font-sizes, $key) {
+        @return map-get($font-sizes, $key);
+    }
+
+    @warn "Tamaño de fuente '#{$key}' no encontrado en el mapa de fuentes.";
+    @return null;
+}
+
+// Función para obtener sombras del mapa
+@function shadow($key) {
+    @if map-has-key($shadows, $key) {
+        @return map-get($shadows, $key);
+    }
+
+    @warn "Sombra '#{$key}' no encontrada en el mapa de sombras.";
+    @return null;
+}
+
+// Función para obtener transiciones del mapa
+@function transition($key) {
+    @if map-has-key($transitions, $key) {
+        @return map-get($transitions, $key);
+    }
+
+    @warn "Transición '#{$key}' no encontrada en el mapa de transiciones.";
+    @return null;
+}
+
+// Función para obtener breakpoints del mapa
+@function breakpoint($key) {
+    @if map-has-key($breakpoints, $key) {
+        @return map-get($breakpoints, $key);
+    }
+
+    @warn "Breakpoint '#{$key}' no encontrado en el mapa de breakpoints.";
+    @return null;
+}
+
+// Función para obtener z-index del mapa
+@function z-index($key) {
+    @if map-has-key($z-indexes, $key) {
+        @return map-get($z-indexes, $key);
+    }
+
+    @warn "Z-index '#{$key}' no encontrado en el mapa de z-indexes.";
+    @return null;
+}
+
+// Función para convertir px a rem
+@function rem($pixels, $context: 16px) {
+    @return #{$pixels / $context}rem;
+}
+
+// Función para crear rgba con opacidad
+@function rgba-color($color, $opacity) {
+    @return rgba($color, $opacity);
+}
+
+// =================================
+// 4. MIXINS SASS
+// =================================
+
+// Mixin para media queries
+@mixin media-query($breakpoint) {
+    $value: breakpoint($breakpoint);
+
+    @if $value {
+        @media (max-width: $value) {
+            @content;
+        }
+    }
+}
+
+// Mixin para media queries mínimas
+@mixin media-query-min($breakpoint) {
+    $value: breakpoint($breakpoint);
+
+    @if $value {
+        @media (min-width: $value) {
+            @content;
+        }
+    }
+}
+
+// Mixin para media queries entre breakpoints
+@mixin media-query-between($min-breakpoint, $max-breakpoint) {
+    $min-value: breakpoint($min-breakpoint);
+    $max-value: breakpoint($max-breakpoint);
+
+    @if $min-value and $max-value {
+        @media (min-width: $min-value) and (max-width: $max-value) {
+            @content;
+        }
+    }
+}
+
+// Mixin para centrar elementos
+@mixin center($horizontal: true, $vertical: true) {
+    position: absolute;
+
+    @if $horizontal and $vertical {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @else if $horizontal {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @else if $vertical {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+// Mixin para flexbox center
+@mixin flex-center($direction: row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+// Mixin para grid responsive
+@mixin grid-responsive($min-width: 280px, $gap: spacing(lg)) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+    gap: $gap;
+}
+
+// Mixin para botones
+@mixin button-style($bg-color: color(primary), $text-color: color(white), $hover-bg: color(primary-dark)) {
+    background-color: $bg-color;
+    color: $text-color;
+    border: none;
+    border-radius: 0.5rem;
+    padding: spacing(sm) spacing(md);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all transition(normal);
+    cursor: pointer;
+
+    &:hover {
+        background-color: $hover-bg;
+        transform: translateY(-2px);
+        box-shadow: shadow(lg);
+    }
+
+    &:focus {
+        outline: 2px solid $bg-color;
+        outline-offset: 2px;
+    }
+}
+
+// Mixin para cards
+@mixin card-style($bg: color(white), $shadow: shadow(md), $radius: 1rem) {
+    background-color: $bg;
+    border-radius: $radius;
+    box-shadow: $shadow;
+    transition: transform transition(normal), box-shadow transition(normal);
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: shadow(xl);
+    }
+}
+
+// Mixin para texto con sombra
+@mixin text-shadow($color: rgba(0, 0, 0, 0.5), $x: 2px, $y: 2px, $blur: 4px) {
+    text-shadow: $x $y $blur $color;
+}
+
+// Mixin para backdrop filter
+@mixin backdrop-blur($blur: 10px, $bg: rgba(255, 255, 255, 0.95)) {
+    background-color: $bg;
+    backdrop-filter: blur($blur);
+}
+
+// Mixin para aspect ratio
+@mixin aspect-ratio($width, $height) {
+    aspect-ratio: #{$width} / #{$height};
+}
+
+// Mixin para truncar texto
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Mixin para líneas múltiples truncadas
+@mixin text-truncate-lines($lines: 2) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+// Mixin para animaciones
+@mixin animation($name, $duration: 0.3s, $timing: ease-out, $delay: 0s) {
+    animation: $name $duration $timing $delay;
+}
+
+// Mixin para transiciones personalizadas
+@mixin custom-transition($properties...) {
+    $transitions: (
+    );
+
+@each $property in $properties {
+    $transitions: append($transitions, #{$property} transition(normal), comma);
+}
+
+transition: $transitions;
+}
+
+// =================================
+// 5. KEYFRAMES Y ANIMACIONES
+// =================================
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+// =================================
+// 6. RESET Y ESTILOS BASE
+// =================================
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-primary;
+    line-height: 1.6;
+    color: color(text);
+    background-image: url(../img/Fondo\ guarida.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+
+    @include media-query(md) {
+        background-attachment: scroll;
+    }
+}
+
+// Elementos de texto centrado
+h4,
+.juli {
+    text-align: center;
+    font-size: font-size(lg);
+}
+
+.alinear-texto {
+    text-align: center;
+}
+
+// Focus visible mejorado
+*:focus-visible {
+    outline: 2px solid color(primary);
+    outline-offset: 2px;
+}
+
+// =================================
+// 7. NAVBAR
+// =================================
+
+.navbar {
+    @include backdrop-blur(10px, rgba(255, 255, 255, 0.95));
+    box-shadow: shadow(md);
+    padding: spacing(xs) 0;
+    position: sticky;
+    top: 0;
+    z-index: z-index(sticky);
+
+    &-brand {
+        img {
+            height: clamp(40px, 8vw, 60px);
+            width: auto;
+            transition: transform transition(normal);
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &-nav {
+        @include media-query-min(xl) {
+            margin-left: auto;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: color(text) !important;
+            padding: spacing(xs) spacing(sm) !important;
+            margin: 0 0.25rem;
+            border-radius: 0.5rem;
+            @include custom-transition(all);
+            position: relative;
+            font-size: clamp(16px, 2.5vw, 20px);
+
+            &:hover {
+                color: color(primary) !important;
+                background-color: rgba-color(color(primary), 0.1);
+            }
+
+            &.active {
+                color: color(primary) !important;
+                background-color: rgba-color(color(primary), 0.15);
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 30px;
+                    height: 2px;
+                    background-color: color(primary);
+                    border-radius: 2px;
+                }
+            }
+
+            @include media-query-min(xl) {
+                margin: 0 spacing(xs);
+            }
+        }
+
+        @include media-query(md) {
+            text-align: center;
+            width: 100%;
+
+            .nav-item {
+                margin-bottom: 0.25rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                    margin-bottom: 0.5rem;
+                    padding-bottom: 0.25rem;
+                }
+            }
+
+            .nav-link {
+                padding: spacing(xs) spacing(sm) !important;
+                margin: 0.1rem 0;
+                text-align: center;
+
+                &:hover {
+                    transform: translateX(5px);
+                }
+            }
+        }
+    }
+
+    &-toggler {
+        border: 2px solid color(primary);
+        border-radius: 0.5rem;
+        padding: 0.25rem spacing(xs);
+
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba-color(color(primary), 0.25);
+        }
+
+        &-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2817, 160, 41, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+    }
+
+    &-collapse {
+        @include media-query(md) {
+            @include backdrop-blur(10px, rgba(255, 255, 255, 0.98));
+            border-radius: 0.75rem;
+            margin-top: spacing(xs);
+            padding: spacing(sm);
+            box-shadow: shadow(md);
+        }
+
+        &.collapsing {
+            transition: height 0.35s ease;
+        }
+
+        &.show {
+            @include animation(fadeInDown);
+        }
+    }
+}
+
+// Corregir estilos del header legacy
+header {
+    nav li {
+        font-size: clamp(16px, 2.5vw, 20px);
+        margin: spacing(sm);
+    }
+
+    img {
+        width: clamp(200px, 40vw, 300px);
+        height: auto;
+        @include aspect-ratio(3, 2);
+        object-fit: contain;
+    }
+}
+
+// =================================
+// 8. HERO SECTION
+// =================================
+
+.hero {
+    color: color(hero-text);
+    text-align: center;
+    font-size: font-size(3xl);
+    height: clamp(400px, 70vh, 600px);
+    background-image: url(../img/La\ Guarida.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    @include flex-center(column);
+    padding: spacing(md);
+
+    @include media-query(md) {
+        background-attachment: scroll;
+    }
+
+    h1 {
+        font-size: font-size(5xl);
+        margin-bottom: spacing(sm);
+        @include text-shadow(rgba(0, 0, 0, 0.5));
+    }
+
+    p {
+        margin-bottom: spacing(md);
+        font-size: font-size(lg);
+        max-width: 600px;
+        @include text-shadow(rgba(0, 0, 0, 0.5), 1px, 1px, 2px);
+    }
+
+    a {
+        @include button-style(color(white), color(text), color(primary));
+        font-size: font-size(xl);
+        box-shadow: shadow(md);
+
+        &:hover {
+            color: color(white);
+        }
+    }
+}
+
+// =================================
+// 9. SECCIONES GENERALES
+// =================================
+
+// Títulos de sección
+section h2 {
+    text-align: center;
+    font-size: font-size(4xl);
+    font-weight: 600;
+    margin-top: spacing(xxl);
+    margin-bottom: spacing(xl);
+    color: color(text);
+    @include text-shadow(rgba(0, 0, 0, 0.5));
+}
+
+main section h1 {
+    color: color(hero-text);
+    font-size: font-size(4xl);
+    @include text-shadow(rgba(0, 0, 0, 0.5));
+}
+
+// Sección Objetivos
+.objetivos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: spacing(xl);
+    gap: spacing(lg);
+    max-width: 1400px;
+    margin: 0 auto;
+
+    @include media-query-between(md, xl) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    @include media-query(md) {
+        flex-direction: column;
+        padding: spacing(lg);
+    }
+
+    img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        @include aspect-ratio(5, 7);
+        object-fit: cover;
+        border-radius: 1rem;
+        box-shadow: shadow(lg);
+        transition: transform transition(normal);
+
+        &:hover {
+            transform: scale(1.02);
+        }
+
+        @include media-query(md) {
+            max-width: 100%;
+            margin-bottom: spacing(lg);
+        }
+    }
+}
+
+.motivación {
+    text-align: center;
+    font-size: font-size(lg);
+    max-width: 50%;
+    @include flex-center(column);
+    height: 100%;
+
+    @include media-query-between(md, xl) {
+        max-width: 100%;
+        margin-top: spacing(lg);
+    }
+
+    @include media-query(md) {
+        max-width: 100%;
+        margin-top: spacing(lg);
+    }
+
+    p {
+        margin-bottom: spacing(lg);
+        line-height: 1.6;
+        color: color(text);
+        @include text-shadow(rgba(0, 0, 0, 0.5), 1px, 1px, 2px);
+    }
+
+    a {
+        @include button-style(color(text), color(white), color(primary));
+        font-size: font-size(xl);
+        margin-top: spacing(lg);
+    }
+}
+
+// =================================
+// 10. SECCIÓN RESEÑAS
+// =================================
+
+.reseñas {
+    text-align: center;
+    margin: spacing(xxl) auto;
+    padding: spacing(xl);
+    @include backdrop-blur(10px, rgba(248, 248, 248, 0.95));
+    border-radius: 2rem;
+    max-width: 1400px;
+    box-shadow: shadow(lg);
+    @include animation(fadeInUp, 0.6s);
+
+    @include media-query(md) {
+        margin-left: spacing(sm);
+        margin-right: spacing(sm);
+    }
+
+    h2 {
+        font-size: font-size(4xl);
+        margin-bottom: spacing(xl);
+        color: color(text);
+        text-shadow: none;
+        margin-top: 0;
+    }
+}
+
+.contenedor-reseñas {
+    @include grid-responsive(280px, spacing(lg));
+    justify-content: center;
+
+    @include media-query(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tarjeta {
+    @include card-style();
+    padding: spacing(lg);
+
+    p {
+        font-size: font-size(base);
+        color: color(text);
+        line-height: 1.6;
+    }
+}
+
+// =================================
+// 11. SECCIÓN VALORES
+// =================================
+
+.valores {
+    @include backdrop-blur(10px, rgba(240, 248, 255, 0.95));
+    text-align: center;
+    margin: spacing(xxl) spacing(lg);
+    padding: spacing(xl);
+    font-size: font-size(lg);
+    border-radius: 2rem;
+    box-shadow: shadow(lg);
+    @include animation(fadeInUp, 0.6s);
+
+    @include media-query(md) {
+        margin-left: spacing(sm);
+        margin-right: spacing(sm);
+    }
+
+    ul li {
+        list-style-type: none;
+        margin-bottom: spacing(sm);
+        padding: spacing(sm);
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 0.5rem;
+    }
+}
+
+// Sección valores mejorada
+.valores-section {
+    padding: spacing(xxl) 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.valores-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 spacing(md);
+
+    h2 {
+        text-align: center;
+        font-size: font-size(4xl);
+        font-weight: bold;
+        color: color(text);
+        margin-bottom: spacing(xl);
+        text-shadow: none;
+        margin-top: 0;
+    }
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: spacing(lg);
+
+    @include media-query-min(xl) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.valor-card {
+    @include card-style(white, shadow(lg), 1.5rem);
+    padding: spacing(lg);
+
+    &:hover {
+        transform: translateY(-4px);
+    }
+
+    h3 {
+        font-size: font-size(2xl);
+        font-weight: bold;
+        color: color(primary);
+        margin-bottom: spacing(sm);
+    }
+
+    p {
+        color: color(text-light);
+        line-height: 1.6;
+        margin: 0;
+        font-size: font-size(base);
+    }
+}
+
+.valores-items {
+    display: grid;
+    gap: spacing(md);
+
+    @include media-query-min(xl) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.valor-item {
+    display: flex;
+    align-items: flex-start;
+    gap: spacing(sm);
+
+    h4 {
+        font-size: font-size(lg);
+        font-weight: bold;
+        color: color(text);
+        margin: 0 0 spacing(xs) 0;
+    }
+
+    p {
+        font-size: font-size(sm);
+        color: color(text-light);
+        margin: 0;
+        line-height: 1.5;
+    }
+}
+
+.valor-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: color(primary);
+    border-radius: 50%;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+// =================================
+// 12. SECCIÓN STAFF
+// =================================
+
+.staff-section {
+    position: relative;
+    padding: spacing(xxl) 0;
+    overflow: hidden;
+    @include animation(fadeInUp, 0.6s);
+
+    >* {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.staff-header {
+    text-align: center;
+    margin-bottom: spacing(xl);
+    padding: 0 spacing(md);
+
+    h2 {
+        @include backdrop-blur(10px, rgba(255, 255, 255, 0.95));
+        border-radius: 1rem;
+        padding: spacing(lg);
+        margin: 0 auto spacing(lg);
+        max-width: 800px;
+        box-shadow: shadow(lg);
+        font-size: font-size(4xl);
+        font-weight: bold;
+        color: color(text);
+        text-shadow: none;
+        margin-top: 0;
+    }
+
+    .nosotros {
+        font-size: font-size(2xl);
+        color: color(text-light);
+        margin: 0;
+        font-weight: 500;
+    }
+}
+
+.staff-grid {
+    @include grid-responsive(300px, spacing(lg));
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 spacing(md);
+
+    @include media-query-between(md, xl) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-query(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.staff-card {
+    @include backdrop-blur(10px, rgba(255, 255, 255, 0.95));
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: shadow(lg);
+    @include custom-transition(all);
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: shadow(xl);
+
+        .staff-image {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.staff-image-container {
+    position: relative;
+    height: clamp(250px, 40vw, 320px);
+    overflow: hidden;
+
+    @include media-query(xs) {
+        height: 250px;
+    }
+}
+
+.staff-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform transition(normal);
+}
+
+.staff-badge {
+    position: absolute;
+    top: spacing(sm);
+    left: spacing(sm);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: spacing(xs) spacing(sm);
+    border-radius: 2rem;
+    font-size: font-size(xs);
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.staff-content {
+    padding: spacing(md);
+    text-align: center;
+}
+
+.staff-name {
+    font-size: font-size(xl);
+    font-weight: bold;
+    color: color(text);
+    margin: 0 0 spacing(xs) 0;
+}
+
+.staff-role {
+    font-size: font-size(lg);
+    color: color(primary);
+    font-weight: 600;
+    margin: 0 0 spacing(sm) 0;
+}
+
+.staff-description {
+    margin-bottom: spacing(sm);
+
+    p {
+        color: color(text-light);
+        line-height: 1.5;
+        margin: 0;
+        font-size: font-size(sm);
+    }
+}
+
+.staff-fun-fact {
+    background: color(background);
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+
+    p {
+        margin: 0;
+        font-size: font-size(xs);
+        font-style: italic;
+        color: #555;
+        font-weight: 500;
+    }
+}
+
+// Estadísticas de la comunidad
+.community-stats {
+    margin-top: spacing(xxl);
+    text-align: center;
+
+    h3 {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(64, 64, 64, 0.9));
+        color: white;
+        padding: spacing(lg);
+        border-radius: 1.5rem;
+        margin: 0 auto spacing(sm);
+        max-width: 800px;
+        font-size: font-size(2xl);
+        font-weight: bold;
+        backdrop-filter: blur(10px);
+    }
+
+    >p {
+        color: color(text-light);
+        font-size: font-size(lg);
+        margin-bottom: spacing(lg);
+    }
+}
+
+.stats-grid {
+    @include grid-responsive(120px, spacing(sm));
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(64, 64, 64, 0.9));
+    padding: spacing(lg);
+    border-radius: 1.5rem;
+    backdrop-filter: blur(10px);
+
+    @include media-query-min(xl) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include media-query-between(md, xl) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-query(md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-query(xs) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stat-item {
+    text-align: center;
+    color: white;
+}
+
+.stat-number {
+    font-size: font-size(3xl);
+    font-weight: bold;
+    color: color(primary);
+    margin-bottom: spacing(xs);
+}
+
+.stat-label {
+    font-size: font-size(xs);
+    opacity: 0.9;
+}
+
+// =================================
+// 13. SECCIÓN SERVICIOS
+// =================================
+
+.servicios-section {
+    position: relative;
+    padding: spacing(xxl) 0;
+    background-color: color(background);
+    @include animation(fadeInUp, 0.6s);
+
+    >* {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.servicios-header {
+    text-align: center;
+    margin-bottom: spacing(xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 spacing(md);
+
+    h1 {
+        font-size: font-size(4xl);
+        font-weight: bold;
+        color: color(text);
+        margin-bottom: spacing(sm);
+    }
+
+    h2 {
+        font-size: font-size(3xl);
+        color: color(primary);
+        margin-bottom: spacing(md);
+        position: relative;
+        display: inline-block;
+        text-shadow: none;
+        margin-top: 0;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: color(primary);
+            border-radius: 3px;
+        }
+    }
+}
+
+.servicios-intro {
+    font-size: font-size(lg);
+    color: color(text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.servicios-categoria {
+    margin-bottom: spacing(xxl);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 spacing(md);
+}
+
+.categoria-titulo {
+    font-size: font-size(2xl);
+    font-weight: bold;
+    color: color(text);
+    margin-bottom: spacing(md);
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid color(border);
+    display: flex;
+    align-items: center;
+
+    i {
+        color: color(primary);
+        margin-right: 0.75rem;
+        font-size: 1.25rem;
+    }
+}
+
+.servicios-grid {
+    @include grid-responsive(300px, spacing(lg));
+
+    @include media-query-between(md, xl) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-query(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.servicio-card {
+    @include card-style(color(background));
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+
+    &.destacado {
+        background: linear-gradient(135deg, color(primary-dark) 0%, color(primary) 100%);
+        color: white;
+
+        .servicio-icon {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .servicio-content {
+
+            h4,
+            p {
+                color: white;
+            }
+        }
+    }
+
+    @include media-query(md) {
+        flex-direction: column;
+    }
+}
+
+.servicio-icon {
+    @include flex-center();
+    width: clamp(60px, 10vw, 80px);
+    flex-shrink: 0;
+    background-color: color(border);
+    color: color(primary);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+
+    @include media-query(md) {
+        width: 100%;
+        height: 60px;
+    }
+}
+
+.servicio-content {
+    padding: spacing(md);
+    flex-grow: 1;
+    @include flex-center(column);
+
+    h4 {
+        font-size: font-size(xl);
+        font-weight: bold;
+        color: color(text);
+        margin-bottom: 0.75rem;
+    }
+
+    p {
+        color: color(text-light);
+        margin-bottom: spacing(sm);
+        flex-grow: 1;
+        line-height: 1.5;
+        font-size: font-size(sm);
+    }
+}
+
+.servicio-link {
+    display: inline-block;
+    color: color(primary);
+    font-weight: 600;
+    text-decoration: none;
+    padding: spacing(xs) 0;
+    position: relative;
+    transition: color transition(normal);
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: color(primary);
+        transition: width transition(normal);
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+.servicio-link-destacado {
+    display: inline-block;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    padding: spacing(xs) spacing(sm);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2rem;
+    transition: background-color transition(normal);
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        color: white;
+    }
+}
+
+.servicios-cta {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(64, 64, 64, 0.8));
+    color: white;
+    padding: spacing(xl) spacing(md);
+    border-radius: 1rem;
+    margin: spacing(lg) auto 0;
+    max-width: 800px;
+
+    h3 {
+        font-size: font-size(2xl);
+        font-weight: bold;
+        margin-bottom: spacing(sm);
+    }
+
+    p {
+        font-size: font-size(lg);
+        margin-bottom: spacing(md);
+        opacity: 0.9;
+    }
+}
+
+.cta-button {
+    @include button-style(color(primary), white, color(primary-dark));
+    border-radius: 2rem;
+
+    &:hover {
+        transform: scale(1.05);
+        color: white;
+    }
+}
+
+// =================================
+// 14. SECCIÓN CONTACTO
+// =================================
+
+.contacto {
+    position: relative;
+    padding: spacing(xxl) spacing(md);
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: color(background);
+
+    @include media-query(xs) {
+        padding: spacing(lg) spacing(sm);
+    }
+
+    >* {
+        position: relative;
+        z-index: 1;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: font-size(4xl);
+        font-weight: bold;
+        color: color(text);
+        margin-bottom: spacing(sm);
+        @include backdrop-blur(10px, rgba(255, 255, 255, 0.95));
+        border-radius: 1rem;
+        padding: spacing(lg);
+        box-shadow: shadow(lg);
+        text-shadow: none;
+        margin-top: 0;
+    }
+
+    h3 {
+        text-align: center;
+        padding: spacing(xl);
+        font-size: font-size(3xl);
+        color: color(primary);
+        @include backdrop-blur(10px, rgba(255, 255, 255, 0.95));
+        border-radius: 1rem;
+        box-shadow: shadow(lg);
+        margin-bottom: spacing(lg);
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: color(primary);
+            border-radius: 3px;
+        }
+    }
+
+    form {
+        @include backdrop-blur(10px, rgba(255, 255, 255, 0.95));
+        padding: spacing(lg);
+        border-radius: 1.5rem;
+        box-shadow: shadow(lg);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        margin-bottom: spacing(lg);
+        @include animation(fadeInUp, 0.6s);
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: color(text);
+        margin-bottom: spacing(xs);
+        font-size: font-size(sm);
+    }
+
+    .form-control {
+        border: 2px solid color(border);
+        border-radius: 0.75rem;
+        padding: 0.75rem spacing(sm);
+        font-size: font-size(base);
+        @include custom-transition(all);
+        background-color: color(background);
+
+        &:focus {
+            border-color: color(primary);
+            box-shadow: 0 0 0 0.2rem rgba-color(color(primary), 0.25);
+            background-color: white;
+        }
+
+        &::placeholder {
+            color: #adb5bd;
+            font-style: italic;
+        }
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, color(primary-light) 0%, color(primary) 100%);
+        border: none;
+        border-radius: 2rem;
+        padding: 0.75rem spacing(lg);
+        font-weight: 600;
+        font-size: font-size(lg);
+        @include custom-transition(all);
+        box-shadow: shadow(md);
+
+        &:hover {
+            background: linear-gradient(135deg, color(primary) 0%, color(primary-dark) 100%);
+            transform: translateY(-2px);
+            box-shadow: shadow(lg);
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba-color(color(primary), 0.5);
+        }
+
+        @include media-query(md) {
+            width: 100%;
+        }
+    }
+}
+
+.frase {
+    text-align: center;
+    margin-bottom: spacing(xl);
+    font-size: font-size(lg);
+    color: color(text-light);
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.9);
+    padding: spacing(md);
+    border-radius: 0.75rem;
+    box-shadow: shadow(md);
+    border-left: 4px solid color(primary);
+}
+
+.frase-final {
+    margin-top: spacing(md);
+    text-align: center;
+    font-size: font-size(xl);
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(64, 64, 64, 0.8));
+    padding: spacing(lg);
+    border-radius: 1rem;
+    box-shadow: shadow(lg);
+    backdrop-filter: blur(10px);
+}
+
+// =================================
+// 15. CAROUSEL
+// =================================
+
+.gym-carousel {
+    max-width: clamp(300px, 90vw, 900px);
+    margin: spacing(xl) auto;
+    box-shadow: shadow(lg);
+    border-radius: 12px;
+    overflow: hidden;
+
+    .carousel-item img {
+        height: clamp(250px, 50vw, 400px);
+        object-fit: cover;
+        width: 100%;
+        transition: transform transition(normal);
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}
+
+.parrafo-carrousel {
+    margin-top: spacing(lg);
+    text-align: center;
+    font-size: font-size(lg);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    padding: 0 spacing(md);
+    color: color(text);
+    @include text-shadow(rgba(0, 0, 0, 0.5), 1px, 1px, 2px);
+
+    @include media-query(md) {
+        margin-left: spacing(sm);
+        margin-right: spacing(sm);
+    }
+}
+
+// =================================
+// 16. UBICACIÓN
+// =================================
+
+.ubicacion-section {
+    padding: spacing(xxl) 0;
+    background: color(background);
+}
+
+.ubicacion-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 spacing(md);
+    text-align: center;
+
+    h3 {
+        font-size: font-size(3xl);
+        font-weight: bold;
+        color: color(text);
+        margin-bottom: spacing(sm);
+    }
+
+    >p {
+        color: color(text-light);
+        font-size: font-size(lg);
+        margin-bottom: spacing(lg);
+    }
+}
+
+.map-container {
+    background: white;
+    border-radius: 1.5rem;
+    padding: spacing(sm);
+    box-shadow: shadow(lg);
+
+    iframe {
+        width: 100%;
+        height: clamp(250px, 50vw, 400px);
+        border: 0;
+        border-radius: 12px;
+    }
+}
+
+// =================================
+// 17. FOOTER
+// =================================
+
+footer {
+    @include backdrop-blur(10px, rgba(214, 214, 214, 0.9));
+    padding: spacing(md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: spacing(sm);
+
+    @include media-query(md) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    p a img {
+        width: clamp(40px, 8vw, 50px);
+        height: clamp(40px, 8vw, 50px);
+        transition: transform transition(normal);
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.pie-de-pagina {
+    text-align: right;
+    font-size: font-size(sm);
+
+    @include media-query(md) {
+        text-align: center;
+    }
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: clamp(20px, 5vw, 50px);
+    right: clamp(15px, 3vw, 25px);
+    z-index: z-index(fixed);
+
+    img {
+        width: clamp(50px, 10vw, 60px);
+        height: clamp(50px, 10vw, 60px);
+        border-radius: 50%;
+        box-shadow: shadow(lg);
+        transition: transform transition(normal);
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// =================================
+// 18. ESTILOS LEGACY
+// =================================
+
+// Sección nosotros legacy
+.nosotros {
+    font-size: font-size(3xl);
+    text-align: center;
+    margin-bottom: spacing(xxl);
+    margin-top: spacing(xl);
+    color: color(hero-text);
+    @include text-shadow(rgba(0, 0, 0, 0.5));
+}
+
+.chicos,
+.chicas {
+    @include grid-responsive(250px, spacing(lg));
+    margin-bottom: spacing(xxl);
+    padding: 0 spacing(lg);
+    justify-items: center;
+
+    @include media-query-between(md, xl) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-query(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.persona {
+    @include flex-center(column);
+    margin-bottom: spacing(lg);
+    @include card-style(rgba(255, 255, 255, 0.9));
+    padding: spacing(md);
+
+    p {
+        margin-top: spacing(sm);
+        text-align: center;
+        font-size: font-size(lg);
+        color: color(text);
+        font-weight: 600;
+    }
+}
+
+.tomas,
+.fran {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    @include aspect-ratio(4, 5);
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.vik,
+.delfi {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    @include aspect-ratio(3, 4);
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.manada-opina {
+    text-align: center;
+    font-size: font-size(3xl);
+    margin: spacing(xl) 0;
+    color: color(hero-text);
+    @include text-shadow(rgba(0, 0, 0, 0.5));
+}
+
+.guarida-3 {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    @include aspect-ratio(3, 5);
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+// Campos del formulario legacy
+.Nombre,
+.Apellido,
+.Email,
+.Celular,
+.Materia {
+    font-size: font-size(lg);
+    padding: spacing(lg);
+    margin-bottom: 10px;
+
+    @include media-query(md) {
+        font-size: font-size(base);
+        padding: spacing(sm);
+    }
+}
+
+.Enviar {
+    font-size: font-size(lg);
+    margin-left: spacing(lg);
+    padding: 10px;
+
+    @include media-query(md) {
+        font-size: font-size(base);
+        margin-left: spacing(sm);
+    }
+}
+
+// =================================
+// 19. CLASES DE ANIMACIÓN
+// =================================
+
+.fade-in-up {
+    @include animation(fadeInUp, 0.6s);
+}
+
+.fade-in-down {
+    @include animation(fadeInDown, 0.3s);
+}
+
+.slide-in-left {
+    @include animation(slideInLeft, 0.5s);
+}
+
+.slide-in-right {
+    @include animation(slideInRight, 0.5s);
+}
+
+.pulse {
+    @include animation(pulse, 2s, ease-in-out, infinite);
+}
+
+// =================================
+// 20. MEDIA QUERIES ESPECIALES
+// =================================
+
+// Landscape orientation fixes
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+        padding: spacing(sm);
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+        }
+
+        p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+        }
+    }
+}
+
+// High DPI displays
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    .staff-image,
+    .gym-carousel .carousel-item img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+// Touch device optimizations
+@media (hover: none) and (pointer: coarse) {
+
+    .navbar-nav .nav-link:hover,
+    .staff-card:hover,
+    .servicio-card:hover,
+    .tarjeta:hover,
+    .persona:hover {
+        transform: none;
+    }
+
+    .navbar-nav .nav-link:active,
+    .staff-card:active,
+    .servicio-card:active,
+    .tarjeta:active,
+    .persona:active {
+        transform: scale(0.98);
+    }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: #e9ecef;
+        --color-text-light: #adb5bd;
+        --color-background: #212529;
+        --color-border: #495057;
+    }
+
+    .navbar {
+        @include backdrop-blur(10px, rgba(33, 37, 41, 0.95));
+    }
+
+    .navbar-nav .nav-link {
+        color: color(text) !important;
+    }
+}
+
+// Reduced motion preferences
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .staff-section,
+    .servicios-section,
+    .contacto form,
+    .reseñas,
+    .valores {
+        animation: none;
+    }
+
+    .navbar-collapse.show {
+        animation: none;
+    }
+}
+
+// =================================
+// 21. PRINT STYLES
+// =================================
+
+@media print {
+
+    .navbar,
+    .whatsapp,
+    footer {
+        display: none !important;
+    }
+
+    .staff-card,
+    .servicio-card,
+    .contacto form {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+
+    body {
+        background-image: none !important;
+        background-color: white !important;
+    }
+}
